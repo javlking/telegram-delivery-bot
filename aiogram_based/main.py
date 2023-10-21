@@ -71,7 +71,7 @@ async def get_name(message):
     await states.RegisterUser.waiting_for_phone_number.set()
 
 
-@dp.message_handler(state=states.RegisterUser.waiting_for_phone_number)
+@dp.message_handler(state=states.RegisterUser.waiting_for_phone_number, content_types=['text', 'contact'])
 # Этап получения номера телефона
 async def get_number(message):
     # Сохраним телеграмм айди в переменную
